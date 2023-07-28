@@ -287,7 +287,7 @@ export default function Page2() {
   return (
     <div className="brand1 container h-50 bg-fixed scroll-smooth">
       <Header />
-      <div className="brand1 p-5 h-50 max-h-full" id="section0">
+      <div className="brand1 p-5 h-50 max-h-full text-center" id="section0">
         <h1 className="text-8xl font-bold mt-3 mb-3 text-green-800">
           COOLINDIA
         </h1>
