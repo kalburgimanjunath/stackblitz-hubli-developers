@@ -11,6 +11,9 @@ body {
   scroll-behavior: smooth;
   @apply scroll-smooth hover:scroll-auto;
 }
+* {
+  scroll-behavior: smooth;
+}
 
 a {
   color: inherit;

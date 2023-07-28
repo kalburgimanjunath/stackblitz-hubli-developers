@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { useState } from 'react';
 const Section1 = ({ blubs }) => {
   return (
     <div className="bg-orange-200 p-5 min-h-full">
@@ -39,13 +41,20 @@ const Header = () => {
       </div>
       <div className="flex justify-end w-full text-green-800 font-bold">
         <div className="p-2 m-1 hover:bg-gray-300 cursor-pointer rounded-md">
-          <a href="#section1">Home</a>
+          <Link scroll={false} href="#">
+            Home
+          </Link>
         </div>
         <div className="p-2 m-1 hover:bg-gray-300 cursor-pointer rounded-md">
-          <a href="#section4"> Project</a>
+          <Link scroll={false} href="#section4">
+            {' '}
+            Project
+          </Link>
         </div>
         <div className="p-2 m-1 hover:bg-gray-300 cursor-pointer rounded-md">
-          <a href="#section6">Contact us</a>
+          <Link scroll={false} href="#section6">
+            Contact us
+          </Link>
         </div>
       </div>
     </div>
@@ -279,9 +288,17 @@ export default function Page1() {
     { image: 'https://picsum.photos/seed/picsum/200/300' },
     { image: 'https://picsum.photos/seed/picsum/200/300' },
   ];
+  const [showscrollToTop, setShowScroll] = useState(false);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    setShowScroll(!showscrollToTop);
+  };
 
   return (
-    <div className="brand1 container h-50 bg-fixed">
+    <div className="brand1 container h-50 bg-fixed scroll-smooth">
       <Header />
       <div className="p-5 h-50 max-h-full m-5" id="section0">
         <h1 className="text-8xl font-bold mt-3 mb-3 text-green-800">
@@ -311,6 +328,34 @@ export default function Page1() {
           <button className="secondary">Contact Us</button>
         </div>
       </div>
+
+      <button
+        onClick={() => scrollToTop()}
+        type="button"
+        data-te-ripple-init
+        data-te-ripple-color="light"
+        class={
+          showscrollToTop
+            ? '!fixed bottom-5 right-5 rounded-full bg-red-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg'
+            : 'hidden'
+        }
+        id="btn-back-to-top"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          class="h-4 w-4"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+          ></path>
+        </svg>
+      </button>
       <Footer />
     </div>
   );
