@@ -1,7 +1,7 @@
 const Section1 = ({ blubs }) => {
   return (
-    <div className="brand2 p-3">
-      <div className="flex grid grid-cols-3 justify-around w-full">
+    <div className="brand2 p-5 m-5">
+      <div className="flex grid grid-cols-3 justify-around w-full mt-5">
         {blubs &&
           blubs.map((item) => {
             return (
@@ -19,17 +19,23 @@ const Header = () => {
   return (
     <div className="flex">
       <div>Logo</div>
-      <div className="flex justify-around w-full text-green-800 font-bold">
-        <div>Home</div>
-        <div>Project</div>
-        <div>Contact us</div>
+      <div className="flex justify-end w-full text-green-800 font-bold">
+        <div className="p-2 m-1 hover:bg-gray-300 cursor-pointer rounded-md">
+          Home
+        </div>
+        <div className="p-2 m-1 hover:bg-gray-300 cursor-pointer rounded-md">
+          Project
+        </div>
+        <div className="p-2 m-1 hover:bg-gray-300 cursor-pointer rounded-md">
+          Contact us
+        </div>
       </div>
     </div>
   );
 };
 const Section2 = ({ blubs }) => {
   return (
-    <div className="p-3">
+    <div className="p-5 m-5">
       <div className="flex grid grid-cols-3 justify-around w-full">
         {blubs &&
           blubs.map((item) => {
@@ -46,12 +52,12 @@ const Section2 = ({ blubs }) => {
 };
 const Section3 = ({ blubs }) => {
   return (
-    <div className="p-3 ">
-      <div className="flex grid grid-cols-3 w-full justify-around ">
+    <div className="p-5 m-5">
+      <div className="flex grid grid-cols-2 w-full justify-around ">
         {blubs &&
           blubs.map((item) => {
             return (
-              <div className="rounded border p-2 m-2 brand2">
+              <div className="rounded border-2 border-black p-3 m-2 brand2">
                 <div className="text-md font-bold">{item.title}</div>
                 <div className="text-md italic">{item.author}</div>
               </div>
@@ -138,7 +144,7 @@ export default function Page1() {
   return (
     <div className="brand1 container h-50">
       <Header />
-      <div className="p-5 h-50 min-h-full">
+      <div className="p-5 h-50 min-h-full m-5">
         <h1 className="text-8xl font-bold mt-3 mb-3 text-green-800">
           Revolutionizing Hubli Landscapes. Discover Dream Properties.
         </h1>
@@ -148,13 +154,13 @@ export default function Page1() {
       <Section1 blubs={blubs} />
       <Section2 blubs={blubs1} />
       <Section3 blubs={blubs2} />
-      <div className="p-5">
+      <div className="p-5 text-center">
         <h1 className="m-2 text-3xl">Let’s create visionary spaces.</h1>
         <div>
           <button className="secondary">Get Started</button>
         </div>
       </div>
-      <div className="p-5">
+      <div className="p-5 text-center">
         <h1 className="m-2 text-3xl">Get Started</h1>
         <div className="m-2">
           Ready to embark on a land development journey with the best of Hubli?
