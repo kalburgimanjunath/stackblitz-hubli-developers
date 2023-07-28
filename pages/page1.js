@@ -1,6 +1,6 @@
 const Section1 = ({ blubs }) => {
   return (
-    <div className="bg-blue-600 p-3">
+    <div className="brand2 p-3">
       <div className="flex grid grid-cols-3 justify-around w-full">
         {blubs &&
           blubs.map((item) => {
@@ -17,9 +17,9 @@ const Section1 = ({ blubs }) => {
 };
 const Header = () => {
   return (
-    <div>
+    <div className="flex">
       <div>Logo</div>
-      <div>
+      <div className="flex justify-around w-full text-green-800 font-bold">
         <div>Home</div>
         <div>Project</div>
         <div>Contact us</div>
@@ -30,7 +30,7 @@ const Header = () => {
 const Section2 = ({ blubs }) => {
   return (
     <div className="p-3">
-      <div className="flex grid grid-cols-2 justify-around w-full">
+      <div className="flex grid grid-cols-3 justify-around w-full">
         {blubs &&
           blubs.map((item) => {
             return (
@@ -51,7 +51,7 @@ const Section3 = ({ blubs }) => {
         {blubs &&
           blubs.map((item) => {
             return (
-              <div className="rounded border p-2 m-2">
+              <div className="rounded border p-2 m-2 brand2">
                 <div className="text-md font-bold">{item.title}</div>
                 <div className="text-md italic">{item.author}</div>
               </div>
@@ -98,50 +98,48 @@ const Footer = () => {
 };
 export default function Page1() {
   const blubs = [
-    { title: 'World class courses', subtitle: 'learn from experts' },
-    { title: 'Global community', subtitle: 'Connect and Collaborate' },
-    { title: 'Career Growth', subtitle: 'Unlock new Opportunities' },
+    { title: 'Lavish Living Spaces', subtitle: '200+ Happy Families' },
+    { title: 'State-of-the-Art Offices', subtitle: '50+ Thriving Businesses' },
+    { title: 'Eco-Friendly Designs', subtitle: '30+ Green Spaces' },
   ];
   const blubs1 = [
     {
-      title: 'Unleash Your Potential with Personalized Learning Paths',
-      subtitle:
-        'With EduHub, your learning experience is tailored to your interests and goals. Our sophisticated AI technology creates a unique learning path for you, ensuring you get the most out of your educational journey.',
+      title: 'Ramesh',
+      subtitle: 'CEO',
       image: '',
     },
     {
-      title: 'Top Instructors Bring Learning to Life in Engaging Lectures',
+      title: 'Geeta',
       subtitle:
         'EduHub boasts a lineup of skilled instructors from top institutions around the globe. Experience captivating lectures that delve deep into subjects, inspiring you to think creatively and experientially.',
+      image: 'Architect',
+    },
+    {
+      title: 'Prakash',
+      subtitle: 'Project Manager',
       image: '',
     },
   ];
   const blubs2 = [
     {
       title:
-        'EduHub transformed my learning experience. I’ve never felt so engaged and motivated!',
-      author: 'Johnson',
+        'Hubli Land Developers transformed our cramped office into a spacious, modern workspace that sparks creativity.',
+      author: 'TechMars',
       image: '',
     },
     {
       title:
-        'I love the personalized learning paths. They’ve helped me focus on what really matters.',
-      author: 'Tyler Norris',
-      image: '',
-    },
-    {
-      title:
-        'The collaborative projects are fantastic. I’ve made valuable connections!',
-      author: 'Zara Wilson',
+        'Their residential project, Tranquil Living, gave our family the perfect combination of comfort, luxury, and nature.',
+      author: 'DreamHome',
       image: '',
     },
   ];
 
   return (
-    <div className="bg-blue-500 container h-50">
+    <div className="brand1 container h-50">
       <Header />
       <div className="p-5 h-50 min-h-full">
-        <h1 className="text-4xl font-bold mt-3 mb-3">
+        <h1 className="text-8xl font-bold mt-3 mb-3 text-green-800">
           Revolutionizing Hubli Landscapes. Discover Dream Properties.
         </h1>
 
@@ -150,15 +148,21 @@ export default function Page1() {
       <Section1 blubs={blubs} />
       <Section2 blubs={blubs1} />
       <Section3 blubs={blubs2} />
-      <div className="bg-blue-400 p-5">
-        <h1 className="m-2 text-3xl">
-          Don’t just stand on the sidelines. Immerse yourself in the thrilling
-          world of EduHub and unlock your true potential!
-        </h1>
-
+      <div className="p-5">
+        <h1 className="m-2 text-3xl">Let’s create visionary spaces.</h1>
         <div>
           <button className="secondary">Get Started</button>
-          <button className="primary">Learn More</button>
+        </div>
+      </div>
+      <div className="p-5">
+        <h1 className="m-2 text-3xl">Get Started</h1>
+        <div className="m-2">
+          Ready to embark on a land development journey with the best of Hubli?
+          Reach out to our team for more information, or visit our projects
+          today.
+        </div>
+        <div>
+          <button className="secondary">Contact Us</button>
         </div>
       </div>
       <Footer />
