@@ -24,13 +24,13 @@ a {
   box-sizing: border-box;
 }
 .primary {
-  @apply bg-black text-white rounded-md p-2 m-2 ml-2 hover:bg-gray-800 hover:underline;
+  @apply bg-white text-gray-800 font-bold rounded-md p-2 m-2 ml-2 hover:shadow-md uppercase;
 }
 .secondary {
   @apply bg-gray-800 text-white rounded-md p-2 m-2 ml-2 underline hover:bg-black;
 }
 .brand1 {
-  background: #ffddd2;
+  background: #8ecae6;
 }
 .brand2 {
   background: #ffddd2;
